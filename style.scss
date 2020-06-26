@@ -1,0 +1,37 @@
+$main-background: tomato;
+$logo-color: #113d6a;
+$animate-duration: 7000ms;
+$animation-iterrate: infinite;
+$animation-timing: linear;
+$logo-size: 280px;
+
+
+* {
+    margin: auto;
+    width: 50%;
+    background-color: $main-background;
+}
+
+.Logo {
+    height: $logo-size;
+    width: $logo-size;
+    background-color: $logo-color;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+    position: relative;
+    animation-name: rotate;
+    animation-duration: $animate-duration;
+    animation-iteration-count: $animation-iterrate;
+    animation-timing-function: $animation-timing;
+    transform: rotate(180deg);
+
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: perspective(5000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(5000px) rotateY(360deg)
+    }
+}
